@@ -19,11 +19,14 @@ The analysis answers practical questions about total revenue, order volume, cust
 
 ## Dataset
 
-The repository includes the cleaned dataset used by the notebook:
+The repository includes both the original raw dataset and the cleaned dataset used by the notebook:
+
+- `python_data_analytics_ecommerce_raw.csv` — the original raw e-commerce data.
+- `python_data_analytics_ecommerce_raw_cleaned.csv` — the cleaned dataset used directly by the notebook.
 
 `python_data_analytics_ecommerce_raw_cleaned.csv`
 
-The file contains **12,350 records and 18 columns**, including the original transaction fields plus the calculated `Revenue` and `Month` columns. The notebook reads this repository file directly, so no separate raw-data download or local machine path is required.
+The cleaned file contains **12,350 records and 18 columns**, including the original transaction fields plus the calculated `Revenue` and `Month` columns. The notebook reads this repository file directly, so no separate data download or local machine path is required.
 
 The original cleaning workflow documented in the notebook includes duplicate removal, categorical text standardization, numeric conversion for `UnitPrice`, date conversion for `OrderDate`, missing-value handling, and the revenue calculation:
 
@@ -115,6 +118,7 @@ ecommerce-sales-analysis/
 ├── README.md
 ├── requirements.txt
 ├── ecommerce_sales_analysis.ipynb
+├── python_data_analytics_ecommerce_raw.csv
 ├── python_data_analytics_ecommerce_raw_cleaned.csv
 └── images/
     ├── monthly_revenue_trend.png
