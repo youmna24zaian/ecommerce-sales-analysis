@@ -1,155 +1,132 @@
 # E-commerce Sales Analysis
 
-A practical e-commerce sales data analysis project using **Python and Pandas**, focused on data cleaning, exploratory analysis, aggregation, and extracting business-oriented insights from transactional sales data.
+A beginner-friendly analysis of e-commerce transactions using **Python, Pandas, Matplotlib, and Jupyter Notebook**. The project demonstrates data cleaning, exploratory analysis, KPI calculation, revenue analysis, sales-channel comparison, product performance, and return analysis.
 
 ## Project Overview
 
-This project analyzes an e-commerce dataset containing customer, product, sales, payment, shipping, and return information.
+This project examines customer, product, order, payment, shipping, and return information in an e-commerce dataset. The notebook cleans the included dataset, calculates revenue, summarizes the main business metrics, and presents four focused visualizations.
 
-The analysis covers the workflow from **raw data inspection and cleaning** to **revenue analysis and business insights** using Pandas.
+## Objectives
+
+The analysis answers practical questions about total revenue, order volume, customer activity, product performance, sales channels, returned orders, and monthly revenue patterns.
+
+## Tools and Technologies
+
+- Python
+- Pandas
+- Matplotlib
+- Jupyter Notebook
 
 ## Dataset
 
-* **Initial records:** 12,500
-* **Records after removing duplicates:** 12,350
-* **Columns:** 16
-* **Duplicate rows removed:** 150
+The repository includes the cleaned dataset used by the notebook:
 
-The dataset includes information such as:
+`python_data_analytics_ecommerce_raw_cleaned.csv`
 
-* Order ID and Order Date
-* Customer ID and Customer Type
-* Region and State
-* Product and Category
-* Quantity and Unit Price
-* Discount
-* Sales Channel
-* Payment Method
-* Shipping Method
-* Return Status
-* Customer Rating
+The file contains **12,350 records and 18 columns**, including the original transaction fields plus the calculated `Revenue` and `Month` columns. The notebook reads this repository file directly, so no separate raw-data download or local machine path is required.
 
-## Data Cleaning & Preparation
+The original cleaning workflow documented in the notebook includes duplicate removal, categorical text standardization, numeric conversion for `UnitPrice`, date conversion for `OrderDate`, missing-value handling, and the revenue calculation:
 
-The project includes several data preparation steps:
-
-* Loaded the dataset using `pandas.read_csv()`
-* Inspected dataset structure, dimensions, and data types
-* Checked for missing values
-* Identified and removed duplicate records
-* Standardized categorical text using `.str.strip()` and `.str.title()`
-* Converted `OrderDate` to datetime
-* Handled missing categorical values using `"Unknown"`
-* Cleaned and converted `UnitPrice` to numeric values
-* Calculated the final `Revenue` column
-* Saved the cleaned dataset as a separate CSV file
-
-### Revenue Calculation
-
-```python
+```text
 Revenue = Quantity × UnitPrice × (1 - Discount)
 ```
 
-## Business Questions
+## Analysis Performed
 
-The analysis explores questions such as:
+The notebook covers:
 
-* How much revenue was generated overall?
-* How many orders and unique customers were recorded?
-* Which products generate the most revenue?
-* Which regions contribute the most revenue?
-* Which customer types generate the most revenue?
-* How does revenue vary across sales channels?
-* How do returned and non-returned orders compare?
-* How does revenue change from month to month?
+- Dataset inspection and data-type review
+- Missing-value and duplicate-row checks
+- Text standardization for categorical columns
+- Unit-price and date conversion
+- Revenue calculation
+- KPI calculation for revenue, orders, customers, and average order value
+- Revenue summaries by product, region, customer type, and sales channel
+- Returned versus non-returned order analysis
+- Monthly revenue analysis for rows with valid order dates
+- Four Matplotlib visualizations saved in the `images/` folder
 
-## Key Results
+## Analysis Preview
 
-* **Total Revenue:** $1,756,117.01
-* **Total Orders:** 12,350
-* **Unique Customers:** 5,115
-* **Average Order Value:** $142.20
+The charts below are generated from the project dataset and are also created when the notebook is run.
 
-### Key Insights
+### Monthly Revenue Trend
 
-* **Returning customers generated the largest share of revenue**, contributing approximately **56.1%** of total revenue. This indicates that repeat purchases represent a substantial part of the analyzed sales activity.
+![Monthly Revenue Trend](images/monthly_revenue_trend.png)
 
-* **Online sales were the largest revenue-generating channel**, accounting for approximately **46.5%** of total revenue, followed by Retail Store, Marketplace, and Corporate channels.
+### Revenue by Sales Channel
 
-* **The West region generated the highest revenue** among the analyzed regions, followed by the Midwest and Southeast. The regional results show that revenue contribution was distributed across multiple regions rather than concentrated in a single market.
+![Revenue by Sales Channel](images/revenue_by_channel.png)
 
-* **Standing Desk was the highest-revenue product**, generating approximately **$309K**, followed by Smart Watch and Office Chair.
+### Top 10 Products by Revenue
 
-* **Returned orders represented about 8.1% of orders** in the cleaned dataset, with 1,000 returned orders compared with 11,350 non-returned orders.
+![Top 10 Products by Revenue](images/top_10_products.png)
 
-* Revenue varied across the available months in the dataset, with January 2026 recording the highest monthly revenue at $38,512.10.
+### Returned vs Non-returned Orders
 
-## Technologies & Libraries
+![Returned vs Non-returned Orders](images/returned_vs_non_returned.png)
 
-* Python
-* Pandas
-* NumPy
-* Jupyter Notebook
+## Key Insights
 
-## Pandas Concepts Practiced
+Using the calculations already present in the notebook, the project reports:
 
-* `read_csv()`
-* `head()`
-* `shape`
-* `columns`
-* `info()`
-* `isnull()`
-* `duplicated()`
-* `drop_duplicates()`
-* `value_counts()`
-* `groupby()`
-* `agg()`
-* `nunique()`
-* `sort_values()`
-* `to_datetime()`
-* `to_period()`
-* String operations
-* Data type conversion
-* DataFrame aggregation
+- **Total revenue:** $1,756,117.01
+- **Total orders:** 12,350
+- **Unique customers:** 5,115
+- **Average order value:** $142.20
+- **Highest-revenue customer type:** Returning customers, with $985,307.35
+- **Highest-revenue sales channel:** Online, with $816,386.02
+- **Highest-revenue region:** West, with $394,499.42
+- **Highest-revenue product:** Standing Desk, with $309,175.11
+- **Returned orders:** 1,000, compared with 11,350 non-returned orders
+- **Highest monthly revenue in the available dated records:** January 2026, with $38,512.10
+
+The monthly chart uses rows with valid `OrderDate` values. The included cleaned data contains missing dates, so undated rows are not assigned to a month.
+
+## How to Run
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/youmna24zaian/ecommerce-sales-analysis.git
+   cd ecommerce-sales-analysis
+   ```
+
+2. Install the required packages:
+
+   ```bash
+   python -m pip install -r requirements.txt
+   ```
+
+3. Open the notebook:
+
+   ```bash
+   jupyter notebook ecommerce_sales_analysis.ipynb
+   ```
+
+4. Run the notebook cells sequentially. The notebook reads the included cleaned CSV and regenerates the chart files in `images/`.
+
+On some systems, use `python3` and `pip3` instead of `python` and `pip`.
 
 ## Project Structure
 
 ```text
 ecommerce-sales-analysis/
-│
 ├── README.md
+├── requirements.txt
 ├── ecommerce_sales_analysis.ipynb
-└── python_data_analytics_ecommerce_raw_cleaned.csv
-```
-
-## How to Run
-
-1. Clone the repository.
-2. Open `ecommerce_sales_analysis.ipynb` in Jupyter Notebook or VS Code.
-3. Make sure the required dataset is available in the appropriate directory.
-4. Run the notebook cells sequentially.
-5. The cleaned dataset will be exported as:
-
-```text
-python_data_analytics_ecommerce_raw_cleaned.csv
+├── python_data_analytics_ecommerce_raw_cleaned.csv
+└── images/
+    ├── monthly_revenue_trend.png
+    ├── revenue_by_channel.png
+    ├── top_10_products.png
+    └── returned_vs_non_returned.png
 ```
 
 ## Reference
 
-This project was practiced based on the following tutorial:
-
-**Python for Data Analysis | Real-World Beginner Project with Pandas**
-
-https://youtu.be/mO8j0ixh-M0
+The project was practiced with the tutorial [Python for Data Analysis | Real-World Beginner Project with Pandas](https://youtu.be/mO8j0ixh-M0).
 
 ## Author
 
-**Youmna Zaian**
-
-GitHub: https://github.com/youmna24zaian
-**Youmna Zaian**
-
-Computer & Control Engineering Graduate | Data Science & Machine Learning
-
-[GitHub](https://github.com/youmna24zaian)
-
+**Youmna Zaian** · [GitHub](https://github.com/youmna24zaian)
