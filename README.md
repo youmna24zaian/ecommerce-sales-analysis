@@ -2,6 +2,8 @@
 
 A beginner-friendly analysis of e-commerce transactions using **Python, Pandas, Matplotlib, and Jupyter Notebook**. The project demonstrates data cleaning, exploratory analysis, KPI calculation, revenue analysis, sales-channel comparison, product performance, and return analysis.
 
+![E-Commerce Sales Analysis project thumbnail](images/ecommerce-sales-analysis-thumbnail-v1.png)
+
 ## Project Overview
 
 This project examines customer, product, order, payment, shipping, and return information in an e-commerce dataset. The notebook cleans the included dataset, calculates revenue, summarizes the main business metrics, and presents four focused visualizations.
@@ -121,6 +123,8 @@ ecommerce-sales-analysis/
 ├── python_data_analytics_ecommerce_raw.csv
 ├── python_data_analytics_ecommerce_raw_cleaned.csv
 └── images/
+    ├── ecommerce-sales-analysis-thumbnail-v1.png
+    ├── ecommerce-sales-analysis-thumbnail-v2.png
     ├── monthly_revenue_trend.png
     ├── revenue_by_channel.png
     ├── top_10_products.png
