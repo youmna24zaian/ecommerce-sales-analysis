@@ -2,7 +2,7 @@
 
 A beginner-friendly analysis of e-commerce transactions using **Python, Pandas, and Matplotlib**. The project demonstrates data cleaning, exploratory analysis, KPI calculation, revenue analysis, sales-channel comparison, product performance, and return analysis through a reusable Python script.
 
-![E-Commerce Sales Analysis project thumbnail](images/ecommerce-sales-analysis-thumbnail-v1.png)
+![E-Commerce Sales Analysis project thumbnail](images/data_analysis_cover_variant_b.png)
 
 ## Project Overview
 
